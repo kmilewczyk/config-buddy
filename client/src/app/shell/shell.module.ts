@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {RouterModule} from "@angular/router";
+import { ShellComponent } from './shell.component';
+import {ThrottleResolver} from "@app/dev/misc/resolvers/throttle.resolver";
 
 /**
  * Module that is included in the initial load. Its focus is to:
@@ -8,9 +11,24 @@ import { CommonModule } from '@angular/common';
  * * Give the user something to work with as soon as possible
  */
 @NgModule({
-  declarations: [],
+  declarations: [
+    ShellComponent
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild([{
+      path: "",
+      component: ShellComponent,
+      children: [
+        {
+          path: "",
+          loadChildren: () => import("@app/core/core.module").then(m => m.CoreModule),
+          resolve: {
+            ThrottleResolver
+          }
+        }
+      ]
+    }])
+  ],
 })
 export class ShellModule { }
