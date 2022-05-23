@@ -18,16 +18,9 @@ import {ThrottleResolver} from "@app/dev/misc/resolvers/throttle.resolver";
     CommonModule,
     RouterModule.forChild([{
       path: "",
+      loadChildren: () => import("@app/core/core.module").then(m => m.CoreModule),
+      resolve: { ThrottleResolver },
       component: ShellComponent,
-      children: [
-        {
-          path: "",
-          loadChildren: () => import("@app/core/core.module").then(m => m.CoreModule),
-          resolve: {
-            ThrottleResolver
-          }
-        }
-      ]
     }])
   ],
 })
