@@ -7,6 +7,5 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('@app/core/core.module').then((m) => m.CoreModule),
-    resolve: { ThrottleResolver },
   },
 ]
