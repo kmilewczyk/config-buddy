@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-core',
-  template: ` <p>core works!</p> `,
+  template: ` <app-navigation><router-outlet></router-outlet></app-navigation> `,
   styles: [],
 })
-export class CoreComponent implements OnInit {
+export class CoreComponent {
   constructor() {}
-
-  ngOnInit(): void {}
 }

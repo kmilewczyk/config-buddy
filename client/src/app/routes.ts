@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router'
-import { routes as prodRoutes } from './routes.prod'
+import { routes as prodRoutes, coreRoutes as prodCoreRoutes } from './routes.prod'
 
 export const routes: Routes = [
   ...prodRoutes,
@@ -8,3 +8,5 @@ export const routes: Routes = [
     loadChildren: () => import('./dev/dev.module').then((m) => m.DevModule),
   },
 ]
+
+export const coreRoutes: Routes = prodCoreRoutes

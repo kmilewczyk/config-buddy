@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { StoreModule } from '@ngrx/store'
+import { NavigationComponent } from './navigation/navigation.component'
+import { LayoutModule } from '@angular/cdk/layout'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatButtonModule } from '@angular/material/button'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatIconModule } from '@angular/material/icon'
+import { MatListModule } from '@angular/material/list'
+import { CoreRoutingModule } from '@app/core/core-routing.module';
 import { CoreComponent } from './core.component'
-import { RouterModule } from '@angular/router'
 
 /**
  * The core module that is always loaded after the initial fetch. It consists of the
@@ -9,15 +17,17 @@ import { RouterModule } from '@angular/router'
  * required to included in the root of the app (like NgRx modules).
  */
 @NgModule({
-  declarations: [CoreComponent],
+  declarations: [NavigationComponent, CoreComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: CoreComponent,
-      },
-    ]),
+    CoreRoutingModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    StoreModule.forRoot({}),
   ],
 })
 export class CoreModule {}

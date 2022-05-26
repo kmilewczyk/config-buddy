@@ -1,11 +1,16 @@
 import { Routes } from '@angular/router'
-import { ShellModule } from './shell/shell.module'
-import { ShellComponent } from '@app/shell/shell.component'
-import { ThrottleResolver } from '@app/dev/misc/resolvers/throttle.resolver'
+import { CoreComponent } from '@app/core/core.component'
 
 export const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('@app/core/core.module').then((m) => m.CoreModule),
+  },
+]
+
+export const coreRoutes: Routes = [
+  {
+    path: '',
+    component: CoreComponent,
   },
 ]
