@@ -1,3 +1,4 @@
-<p>shell works!</p>
-
-<router-outlet></router-outlet>
+<div class="loading-spinner" *ngIf="!(initialSpinner.appReady$ | async)">
+  <mat-spinner></mat-spinner>
+</div>
+<ng-content></ng-content>

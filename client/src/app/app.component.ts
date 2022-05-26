@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: "app <router-outlet></router-outlet>"
+  template: "<app-shell><router-outlet></router-outlet></app-shell>"
 })
-export class AppComponent {
-  // TODO: Here add the spinner from the shell
-  title = 'client';
-}
+export class AppComponent {}

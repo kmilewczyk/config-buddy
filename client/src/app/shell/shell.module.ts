@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import { ShellComponent } from './shell.component';
 import {ThrottleResolver} from "@app/dev/misc/resolvers/throttle.resolver";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 /**
  * Module that is included in the initial load. Its focus is to:
@@ -16,12 +17,10 @@ import {ThrottleResolver} from "@app/dev/misc/resolvers/throttle.resolver";
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild([{
-      path: "",
-      loadChildren: () => import("@app/core/core.module").then(m => m.CoreModule),
-      resolve: { ThrottleResolver },
-      component: ShellComponent,
-    }])
+    MatProgressSpinnerModule
   ],
+  exports: [
+    ShellComponent
+  ]
 })
 export class ShellModule { }
