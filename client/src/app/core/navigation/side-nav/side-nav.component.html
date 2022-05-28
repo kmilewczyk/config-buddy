@@ -1,0 +1,11 @@
+<mat-toolbar>Menu</mat-toolbar>
+<mat-nav-list>
+  <a
+    mat-list-item
+    *ngFor="let link of links"
+    [disabled]="link.disabled"
+    [routerLink]="link.route"
+    [routerLinkActive]="'active'"
+    >{{ link.label }}</a
+  >
+</mat-nav-list>

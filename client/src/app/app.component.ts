@@ -1,10 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: '<app-shell><router-outlet></router-outlet></app-shell>',
 })
-export class AppComponent {
-  title = 'client';
-}
+export class AppComponent {}

@@ -1,0 +1,16 @@
+<mat-sidenav-container class="sidenav-container" *ngrxLet="isHandset$ as isHandset">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="isHandset ? 'over' : 'side'"
+    [opened]="isHandset === false"
+  >
+    <app-side-nav></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-top-nav (toggle)="drawer.toggle()"></app-top-nav>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
