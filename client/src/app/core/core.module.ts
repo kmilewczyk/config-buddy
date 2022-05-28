@@ -13,12 +13,6 @@ import { NotificationsModule } from '@app/core/notifications/notifications.modul
  */
 @NgModule({
   declarations: [CoreComponent],
-  imports: [
-    CommonModule,
-    CoreRoutingModule,
-    NavigationModule,
-    NotificationsModule,
-    StoreModule.forRoot({}),
-  ],
+  imports: [CommonModule, CoreRoutingModule, NavigationModule, StoreModule.forRoot({})],
 })
 export class CoreModule {}

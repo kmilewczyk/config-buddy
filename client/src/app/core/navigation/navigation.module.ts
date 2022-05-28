@@ -11,6 +11,7 @@ import { SideNavComponent } from '@app/core/navigation/side-nav/side-nav.compone
 import { TopNavComponent } from '@app/core/navigation/top-nav/top-nav.component'
 import { RouterModule } from '@angular/router'
 import { ReactiveComponentModule } from '@ngrx/component'
+import { NotificationsModule } from '@app/core/notifications/notifications.module'
 
 @NgModule({
   declarations: [NavigationComponent, SideNavComponent, TopNavComponent],
@@ -24,6 +25,7 @@ import { ReactiveComponentModule } from '@ngrx/component'
     MatIconModule,
     MatListModule,
     ReactiveComponentModule,
+    NotificationsModule,
   ],
   exports: [NavigationComponent],
 })
