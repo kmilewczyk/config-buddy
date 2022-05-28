@@ -12,5 +12,17 @@ export const coreRoutes: Routes = [
   {
     path: '',
     component: CoreComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('@app/dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+    ],
   },
 ]
