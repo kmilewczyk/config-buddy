@@ -3,6 +3,7 @@
   <a
     mat-list-item
     *ngFor="let link of links"
+    [disabled]="link.disabled"
     [routerLink]="link.route"
     [routerLinkActive]="'active'"
     >{{ link.label }}</a
